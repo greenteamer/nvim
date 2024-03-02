@@ -36,6 +36,7 @@ require("neo-tree").setup({
       },
       hide_by_pattern = { -- uses glob style patterns
         "**.bs.js",
+        "**.gen.ts",
         --"*/src/*/tsconfig.json",
       },
       always_show = { -- remains visible even if other settings would normally hide it
