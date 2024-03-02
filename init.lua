@@ -24,3 +24,4 @@ require("lazy").setup("plugins")
 require('colorscheme')
 require('lsp')
 require('keymaps')
+
