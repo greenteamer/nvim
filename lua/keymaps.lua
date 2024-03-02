@@ -14,3 +14,6 @@ vim.keymap.set("n", "<leader>tq", function() trouble.toggle("quickfix") end)
 vim.keymap.set("n", "<leader>tl", function() trouble.toggle("loclist") end)
 vim.keymap.set("n", "gR",         function() trouble.toggle("lsp_references") end)
 
+
+vim.keymap.set("n", "L", ":bnext<CR>")
+vim.keymap.set("n", "H", ":bprev<CR>")

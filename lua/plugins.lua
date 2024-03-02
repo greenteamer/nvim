@@ -69,5 +69,15 @@ return {
       vim.o.timeoutlen = 300
     end,
     opts = {}
+  },
+  {
+    'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    opts = {
+      options = {
+        diagnostics = "nvim_lsp"
+      }
+    }
   }
 }
