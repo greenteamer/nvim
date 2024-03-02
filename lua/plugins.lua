@@ -49,5 +49,12 @@ return {
           -- Configuration here, or leave empty to use defaults
       })
     end
-  }
+  },
+  {
+    'phaazon/hop.nvim',
+    event = 'BufRead',
+    config = function()
+      require('config.hop')
+    end,
+  },
 }
