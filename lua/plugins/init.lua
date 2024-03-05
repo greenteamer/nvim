@@ -8,4 +8,5 @@ return {
   { 'neovim/nvim-lspconfig' },
   { 'norcalli/nvim-colorizer.lua', opts = {} },
   { 'github/copilot.vim' },
+  { 'HiPhish/rainbow-delimiters.nvim' }
 }
