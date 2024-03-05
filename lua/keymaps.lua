@@ -17,3 +17,4 @@ vim.keymap.set("n", "gR",         function() trouble.toggle("lsp_references") en
 
 vim.keymap.set("n", "L", ":bnext<CR>")
 vim.keymap.set("n", "H", ":bprev<CR>")
+vim.keymap.set("n", "<Leader>c", ":bd<CR>")
