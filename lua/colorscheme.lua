@@ -1,5 +1,5 @@
 -- define your colorscheme here
---local colorscheme = 'catppuccin-latte'
+-- local colorscheme = 'catppuccin-macchiato'
 vim.cmd("set background=light")
 local colorscheme = 'papercolor'
 
