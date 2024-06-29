@@ -1,4 +1,12 @@
 return {
-  'folke/trouble.nvim',
-  cmd = 'TroubleToggle',
+	"folke/trouble.nvim",
+	opts = {},
+	cmd = "Trouble",
+	keys = {
+		{
+			"<leader>xx",
+			"<cmd>Trouble diagnostics toggle focus=true<cr>",
+			desc = "Diagnostics (Trouble)",
+		},
+	},
 }

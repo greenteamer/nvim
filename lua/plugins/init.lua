@@ -1,4 +1,6 @@
 return {
+	{ "shaunsingh/nord.nvim" },
+	{ "nyoom-engineering/oxocarbon.nvim" },
 	{ "morhetz/gruvbox" },
 	{ "rebelot/kanagawa.nvim" },
 	{ "NLKNguyen/papercolor-theme" },
@@ -10,5 +12,5 @@ return {
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
 	{ "norcalli/nvim-colorizer.lua", opts = {} },
-	{ "HiPhish/rainbow-delimiters.nvim" },
+	-- { "HiPhish/rainbow-delimiters.nvim" },
 }
