@@ -62,3 +62,5 @@ lspconfig.rescriptls.setup({
 lspconfig.pyright.setup({
 	on_attach = on_attach,
 })
+
+lspconfig.gleam.setup({})
