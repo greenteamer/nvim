@@ -4,6 +4,8 @@ return {
 	{ "morhetz/gruvbox" },
 	{ "rebelot/kanagawa.nvim" },
 	{ "NLKNguyen/papercolor-theme" },
+	{ "Mofiqul/vscode.nvim" },
+	{ "nyoom-engineering/oxocarbon.nvim" },
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{ "savq/melange-nvim" },
 	{ "folke/neodev.nvim" },

@@ -2,11 +2,12 @@
 vim.cmd("set background=light")
 -- vim.cmd("set background=dark")
 -- local colorscheme = "nord"
--- local colorscheme = "oxocarbon"
 -- local colorscheme = "gruvbox"
 -- local colorscheme = "melange"
 -- local colorscheme = "kanagawa"
 local colorscheme = "papercolor"
+-- local colorscheme = "vscode"
+-- local colorscheme = "oxocarbon"
 -- local colorscheme = "catppuccin-macchiato"
 
 local is_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
