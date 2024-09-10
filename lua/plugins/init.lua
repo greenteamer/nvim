@@ -1,4 +1,6 @@
 return {
+	{ "projekt0n/github-nvim-theme" },
+	{ "GustavoPrietoP/doom-themes.nvim" },
 	{ "shaunsingh/nord.nvim" },
 	{ "nyoom-engineering/oxocarbon.nvim" },
 	{ "morhetz/gruvbox" },

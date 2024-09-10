@@ -1,6 +1,8 @@
 vim.g.mapleader = ","
 vim.g.maplocalleader = ";"
 vim.cmd("set nowrap")
+vim.opt.textwidth = 80
+vim.opt.colorcolumn = "80"
 
 require("options")
 
@@ -31,3 +33,5 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 	pattern = { "Fastfile", "Appfile", "Matchfile", "Podfile", "Podfile.lock" },
 	command = "set filetype=ruby",
 })
+
+vim.g["conjure#log#hud#enabled"] = false

@@ -15,7 +15,7 @@ require("neo-tree").setup({
 	sort_function = nil, -- use a custom function for sorting files and directories in the tree
 	window = {
 		position = "left",
-		width = 40,
+		width = 25,
 	},
 	buffers = {
 		follow_current_file = {

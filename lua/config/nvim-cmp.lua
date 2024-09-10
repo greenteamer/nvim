@@ -14,14 +14,14 @@ cmp.setup({
 			require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
 		end,
 	},
-	window = {
+	--[[ window = {
 		completion = {
 			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
 		},
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 		},
-	},
+	}, ]]
 	mapping = cmp.mapping.preset.insert({
 		-- Use <C-b/f> to scroll the docs
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
