@@ -16,5 +16,6 @@ return {
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
 	{ "norcalli/nvim-colorizer.lua", opts = {} },
+	{ "echasnovski/mini.nvim", version = false },
 	-- { "HiPhish/rainbow-delimiters.nvim" },
 }

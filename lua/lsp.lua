@@ -10,7 +10,7 @@ require("mason").setup({
 
 require("mason-lspconfig").setup({
 	-- A list of servers to automatically install if they're not already installed
-	ensure_installed = { "tsserver", "lua_ls", "rescriptls" },
+	ensure_installed = { "ts_ls", "lua_ls", "rescriptls" },
 })
 
 -- Set different settings for different languages' LSP
@@ -22,6 +22,37 @@ local lspconfig = require("lspconfig")
 
 -- Customized on_attach function
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+--
+local function filter(arr, fn)
+	if type(arr) ~= "table" then
+		return arr
+	end
+
+	local filtered = {}
+	for k, v in pairs(arr) do
+		if fn(v, k, arr) then
+			table.insert(filtered, v)
+		end
+	end
+
+	return filtered
+end
+
+local function filterDTS(value)
+	return not string.match(value.filename, ".*/react/.*index%.d%.ts$")
+		and not string.match(value.filename, ".*/styled%-components/.*index%.d%.ts")
+end
+
+local function on_list(options)
+	local items = options.items
+	if #items > 1 then
+		items = filter(items, filterDTS)
+	end
+
+	vim.fn.setqflist({}, " ", { title = options.title, items = items, context = options.context })
+	vim.api.nvim_command("cfirst") -- or maybe you want 'copen' instead of 'cfirst'
+end
+
 local opts = { noremap = true, silent = true }
 
 local on_attach = function(client, bufnr)
@@ -31,7 +62,10 @@ local on_attach = function(client, bufnr)
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-	vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+	vim.keymap.set("n", "gd", function()
+		vim.lsp.buf.definition({ on_list = on_list })
+	end, bufopts)
+	-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
 	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
@@ -53,10 +87,14 @@ end
 -- How to add LSP for a specific language?
 -- 1. use `:Mason` to install corresponding LSP
 -- 2. add configuration below
-lspconfig.tsserver.setup({
+lspconfig.gopls.setup({})
+lspconfig.ts_ls.setup({
 	on_attach = on_attach,
 })
 lspconfig.rescriptls.setup({
+	on_attach = on_attach,
+})
+lspconfig.ruby_lsp.setup({
 	on_attach = on_attach,
 })
 lspconfig.pyright.setup({
