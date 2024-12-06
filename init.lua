@@ -37,3 +37,5 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 })
 
 vim.g["conjure#log#hud#enabled"] = false
+
+vim.notify = require("notify")
