@@ -4,6 +4,8 @@ vim.cmd("set nowrap")
 vim.opt.textwidth = 80
 vim.opt.colorcolumn = "80"
 
+vim.o.cmdheight = 0
+
 require("options")
 
 vim.keymap.set("n", "<leader><Tab>", ":Neotree toggle<CR>")

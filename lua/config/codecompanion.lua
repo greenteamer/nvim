@@ -1,19 +1,30 @@
 require("codecompanion").setup({
 	adapters = {
-		ollama = function()
+		-- LLMs -------------------------------------------------------------------
+		anthropic = function()
 			return require("codecompanion.adapters").extend("ollama", {
-				env = {
-					url = "http://localhost:11434",
-					-- api_key = "OLLAMA_API_KEY",
-				},
-				--[[ headers = {
-					["Content-Type"] = "application/json",
-					["Authorization"] = "Bearer ${api_key}",
-				}, ]]
-				parameters = {
-					sync = true,
+				schema = {
+					model = {
+						default = "qwen2.5-coder:latest",
+					},
 				},
 			})
 		end,
+	},
+	strategies = {
+		chat = {
+			adapter = "ollama",
+			roles = {
+				llm = "CodeCompanion", -- The markdown header content for the LLM's responses
+				user = "Me", -- The markdown header for your questions
+			},
+		},
+		inline = {
+			adapter = "ollama",
+			roles = {
+				llm = "CodeCompanion", -- The markdown header content for the LLM's responses
+				user = "Me", -- The markdown header for your questions
+			},
+		},
 	},
 })

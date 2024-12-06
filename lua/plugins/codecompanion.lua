@@ -1,4 +1,6 @@
-return {
+return {}
+
+--[[ return {
 	"olimorris/codecompanion.nvim",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -11,4 +13,4 @@ return {
 	config = function()
 		require("config.codecompanion")
 	end,
-}
+} ]]
