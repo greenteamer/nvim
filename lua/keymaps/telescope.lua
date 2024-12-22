@@ -1,6 +1,12 @@
 local telescope = require("telescope.builtin")
 
+local find_global = function()
+	telescope.find_files({ cwd = "/" })
+end
+
 vim.keymap.set("n", "<leader>ff", telescope.find_files, { desc = "Find File" })
+vim.keymap.set("n", "<leader>fr", find_global, { desc = "Find File" })
+
 vim.keymap.set(
 	"n",
 	"<leader>fg",
@@ -17,7 +23,7 @@ vim.keymap.set(
 	"n",
 	"<leader>fs",
 	":lua require('telescope.builtin').live_grep({prompt_title = 'find string in open buffers...',grep_open_files = true})<CR>",
-	{ desc = "Live Grep" }
+	{ desc = "Live Buffers Grep" }
 )
 
 vim.keymap.set("n", "<leader>fb", telescope.buffers, { desc = "Buffers" })

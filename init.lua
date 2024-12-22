@@ -8,7 +8,12 @@ vim.o.cmdheight = 0
 
 require("options")
 
+vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<leader><Tab>", ":Neotree toggle<CR>")
+
+-- Quickfix
+vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
 
 -- Lazy Nvim config
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -39,3 +44,5 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 vim.g["conjure#log#hud#enabled"] = false
 
 vim.notify = require("notify")
+
+-- vim.api.nvim_create_user_command("FTermOpen", require("FTerm").open, { bang = true })

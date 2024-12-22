@@ -83,6 +83,6 @@ cmp.setup({
 		{ name = "luasnip" }, -- For luasnip user
 		{ name = "buffer" }, -- For buffer word completion
 		{ name = "path" }, -- For path completion
-		{ name = "conjure" },
+		{ name = "conjure" }, -- For clojure conjure integration
 	}),
 })

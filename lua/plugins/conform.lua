@@ -25,6 +25,7 @@ return {
 			jsonc = { { "prettierd", "prettier" } },
 			html = { { "prettierd", "prettier" } },
 			css = { { "prettierd", "prettier" } },
+			rust = { "rustfmt" },
 		},
 		log_level = vim.log.levels.DEBUG,
 		log_file_path = "/Users/alex/.cache/nvim/log/conform.log",

@@ -1,8 +1,8 @@
 local wk = require("which-key")
 
 wk.add({
-	{ "<leader>f", group = "file" }, -- group
-	-- { "<leader>fn", desc = "New File" },
+	-- groups
+	{ "<leader>f", group = "File" },
 	{ "<leader>w", proxy = "<c-w>", group = "windows" }, -- proxy to window mappings
 	{
 		"<leader>b",

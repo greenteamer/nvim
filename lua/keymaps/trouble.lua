@@ -17,6 +17,8 @@ vim.keymap.set("n", "<leader>tq", function()
 	trouble.toggle("quickfix")
 end, { desc = "Trouble Quickfix" })
 
+vim.keymap.set("n", "<leader>tQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Trouble Quickfix List" })
+
 vim.keymap.set("n", "<leader>tl", function()
 	trouble.toggle("loclist")
 end, { desc = "Trouble Local" })

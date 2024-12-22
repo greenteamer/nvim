@@ -1,4 +1,5 @@
-return {
+return {}
+--[[ return {
 	"akinsho/bufferline.nvim",
 	after = "catppuccin",
 	version = "*",
@@ -11,4 +12,4 @@ return {
 	config = function()
 		require("config.bufferline")
 	end,
-}
+} ]]
