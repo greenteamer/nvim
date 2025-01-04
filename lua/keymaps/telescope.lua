@@ -26,5 +26,5 @@ vim.keymap.set(
 	{ desc = "Live Buffers Grep" }
 )
 
-vim.keymap.set("n", "<leader>fb", telescope.buffers, { desc = "Buffers" })
+vim.keymap.set("n", "<leader>b", telescope.buffers, { desc = "Buffers" })
 vim.keymap.set("n", "<leader>fh", telescope.help_tags, { desc = "Help" })

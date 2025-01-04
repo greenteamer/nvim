@@ -31,6 +31,18 @@ require("nvim-treesitter.configs").setup({
 		updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
 		persist_queries = false, -- Whether the query persists across vim sessions
 	},
+	context_commentstring = {
+		config = {
+			javascript = {
+				__default = "// %s",
+				jsx_element = "{/* %s */}",
+				jsx_fragment = "{/* %s */}",
+				jsx_attribute = "// %s",
+				comment = "// %s",
+			},
+			typescript = { __default = "// %s", __multiline = "/* %s */" },
+		},
+	},
 })
 
 -- There are additional nvim-treesitter modules that you can use to interact

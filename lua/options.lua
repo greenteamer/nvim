@@ -33,3 +33,8 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.expandtab = true
 	end,
 })
+
+vim.o.guifont = "JetBrainsMono Nerd Font Mono:h20:W100" -- text below applies for VimScript
+
+-- Formatting concealment
+vim.opt.conceallevel = 1

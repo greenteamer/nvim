@@ -12,4 +12,5 @@ require("Comment").setup({
 		---Block-comment keymap
 		block = "<Leader><Leader>/",
 	},
+	-- pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 })

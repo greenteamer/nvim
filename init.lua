@@ -1,6 +1,13 @@
 vim.g.mapleader = ","
 vim.g.maplocalleader = ";"
 vim.cmd("set nowrap")
+
+-- Command-line mode mappings
+vim.cmd([[
+  cnoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
+  cnoremap <expr> <Down> pumvisible() ? "<C-n>" : "<Down>"
+]])
+
 vim.opt.textwidth = 80
 vim.opt.colorcolumn = "80"
 
@@ -41,8 +48,16 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 	command = "set filetype=ruby",
 })
 
-vim.g["conjure#log#hud#enabled"] = false
+vim.g["conjure#log#hud#enabled"] = true
 
-vim.notify = require("notify")
+-- vim.notify = require("notify")
+-- vim.notify("hello")
+
+-- obsidian
+require("config.obsidian")
+
+require("oil").setup({
+	watch_for_changes = true,
+})
 
 -- vim.api.nvim_create_user_command("FTermOpen", require("FTerm").open, { bang = true })
